@@ -1,0 +1,15 @@
+{
+    "/notas/*": {
+      "target": "http://localhost:8090",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true
+    },
+
+    "/usuario/*": {
+      "target": "http://localhost:8090",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true
+    }
+  }
