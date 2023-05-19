@@ -37,10 +37,10 @@ export class NuevaNotaComponent implements OnInit {
 
   onCreate(): void {
     
-    const nota = new notas(this.idUser, this.titulo,this.texto);
+    const nota = new notas(6, this.titulo,this.texto);
     this.notasService.nuevo(nota).subscribe(
       data => {
-        this.toastr.success('Usuario Creado', 'OK', {
+        this.toastr.success('Nota Creada', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
         this.router.navigate(['/listaNotas']);

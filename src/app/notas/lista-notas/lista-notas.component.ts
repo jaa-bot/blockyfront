@@ -49,7 +49,7 @@ export class ListaNotasComponent implements OnInit {
   borrarNota(id: number) {
     this.notasService.delete(id).subscribe(
       data => {
-        this.toastr.success('Producto Eliminado', 'OK', {
+        this.toastr.success('Nota Eliminda', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
         this.cargarNotas();

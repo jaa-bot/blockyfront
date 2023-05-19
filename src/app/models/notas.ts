@@ -1,11 +1,13 @@
+import { usuario } from "./usuario";
+
 export class notas{
     id!: number;
-    id_user: number;
+    userId: number;
     titulo: string;
     texto: string;
 
-    constructor(id_user: number, titulo: string, texto: string) {
-        this.id_user = id_user;
+    constructor(userId: number, titulo: string, texto: string) {
+        this.userId = userId;
         this.titulo = titulo;
         this.texto = texto;
     }
