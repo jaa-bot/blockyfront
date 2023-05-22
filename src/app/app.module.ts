@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListaProductoComponent } from './producto/lista-usuario.component';
-import { DetalleProductoComponent } from './producto/detalle-usuario.component';
-import { NuevoProductoComponent } from './producto/nuevo-usuario.component';
-import { EditarProductoComponent } from './producto/editar-usuario.component';
+import { ListaProductoComponent } from './usuarios/lista-usuario.component';
+import { DetalleProductoComponent } from './usuarios/detalle-usuario.component';
+import { NuevoProductoComponent } from './usuarios/nuevo-usuario.component';
+import { EditarProductoComponent } from './usuarios/editar-usuario.component';
 import { interceptorProvider } from './interceptors/usu-interceptor.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ListaProductoComponent } from './producto/lista-usuario.component';
-import { DetalleProductoComponent } from './producto/detalle-usuario.component';
-import { NuevoProductoComponent } from './producto/nuevo-usuario.component';
-import { EditarProductoComponent } from './producto/editar-usuario.component';
+import { ListaProductoComponent } from './usuarios/lista-usuario.component';
+import { DetalleProductoComponent } from './usuarios/detalle-usuario.component';
+import { NuevoProductoComponent } from './usuarios/nuevo-usuario.component';
+import { EditarProductoComponent } from './usuarios/editar-usuario.component';
 import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './auth/login.component';
 import { RegistroComponent } from './auth/registro.component';

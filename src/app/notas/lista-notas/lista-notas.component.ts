@@ -11,40 +11,39 @@ import { UsuarioService } from 'src/app/service/usuario.service';
   templateUrl: './lista-notas.component.html',
   styleUrls: ['./lista-notas.component.css']
 })
-export class ListaNotasComponent implements OnInit
-{
+export class ListaNotasComponent implements OnInit {
 
-  notas!: notas[];
+  notas: notas[] = [];
   nota!: notas;
-  notasUsuario!: notas[];
+  notasUsuario: notas[] = [];
   usuario!: usuario;
   idUser!: number;
   nombreUsuario!: string;
+  searchText!: string;
+  filteredNotas: notas[] = [];
 
   constructor(
     private notasService: NotasService,
     private tokenService: TokenService,
     private toastr: ToastrService,
     private usuarioService: UsuarioService
-  ) { }
-
-  ngOnInit(): void
-  {
-    this.cargarNotas();
-
+  ) {
+    this.searchText = '';
   }
-  borrarNota(id: number)
-  {
+
+  ngOnInit(): void {
+    this.cargarNotas();
+  }
+
+  borrarNota(id: number) {
     this.notasService.delete(id).subscribe(
-      data =>
-      {
+      data => {
         this.toastr.success('Nota Eliminda', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
         this.cargarNotas();
       },
-      err =>
-      {
+      err => {
         this.toastr.error(err.error.mensaje, 'Fail', {
           timeOut: 3000, positionClass: 'toast-top-center',
         });
@@ -52,29 +51,30 @@ export class ListaNotasComponent implements OnInit
     );
   }
 
-  cargarNotas()
-  {
+  cargarNotas() {
     this.nombreUsuario = this.tokenService.getUserName() ?? '';
     this.usuarioService.detailName(this.nombreUsuario).subscribe(
-      data =>
-      {
+      data => {
         this.usuario = data;
         this.idUser = this.usuario.id;
         this.notasService.listaNotasPorUsuario(this.idUser).subscribe(
-          data =>
-          {
+          data => {
             this.notas = data;
+            this.filterNotas(); // Filtrar las notas después de cargarlas
           },
-          err =>
-          {
+          err => {
             console.log(err);
           }
         );
       },
-      err =>
-      {
+      err => {
         console.log(err);
       }
     );
+  }
+
+  filterNotas() {
+    this.filteredNotas = this.notas.filter(nota => nota.titulo.toLowerCase().includes(this.searchText.toLowerCase()));
+    console.log(this.searchText)
   }
 }

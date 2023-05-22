@@ -1,0 +1,8 @@
+.navbar-nav.ml-auto {
+    margin-left: auto;
+  }
+  
+  .navbar-nav.ml-auto .nav-link {
+    margin-left: 15px;
+  }
+  
