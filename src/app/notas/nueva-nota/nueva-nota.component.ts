@@ -34,10 +34,9 @@ export class NuevaNotaComponent implements OnInit {
   }
 
 
-
   onCreate(): void {
-    
-    const nota = new notas(6, this.titulo,this.texto);
+
+    const nota = new notas(this.idUser, this.titulo,this.texto);
     this.notasService.nuevo(nota).subscribe(
       data => {
         this.toastr.success('Nota Creada', 'OK', {

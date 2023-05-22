@@ -1,38 +1,50 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { notas } from '../models/notas';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
-export class NotasService {
+export class NotasService
+{
 
-    notasURL = 'http://localhost:8090/notas/';
+  notasURL = 'http://localhost:8090/notas/';
 
-    constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
-    public lista(): Observable<notas[]> {
-        return this.httpClient.get<notas[]>(this.notasURL + 'listaNotas');
-    }
+  public lista(): Observable<notas[]>
+  {
+    return this.httpClient.get<notas[]>(this.notasURL + 'listaNotas');
+  }
 
-    public nuevo(notas: notas): Observable<notas> {
-        return this.httpClient.post<notas>(this.notasURL + 'nuevoNotas', notas);
-    }
+  public listaNotasPorUsuario(id: number): Observable<notas[]>
+  {
+    return this.httpClient.get<notas[]>(this.notasURL + `notasPorUsuario/${id}`);
+  }
 
-    public delete(id: number): Observable<any> {
-        return this.httpClient.delete<any>(this.notasURL + `deleteNotas/${id}`);
-    }
+  public nuevo(notas: notas): Observable<notas>
+  {
+    return this.httpClient.post<notas>(this.notasURL + 'nuevoNotas', notas);
+  }
 
-    public detailName(nombre: number): Observable<notas[]> {
-        return this.httpClient.get<notas[]>(this.notasURL + `detailnameNotas/${nombre}`);
-    }
+  public delete(id: number): Observable<any>
+  {
+    return this.httpClient.delete<any>(this.notasURL + `deleteNotas/${id}`);
+  }
 
-    public detail(id: number): Observable<notas> {
-        return this.httpClient.get<notas>(this.notasURL + `detailNotas/${id}`);
-    }
+  public detailName(nombre: number): Observable<notas[]>
+  {
+    return this.httpClient.get<notas[]>(this.notasURL + `detailnameNotas/${nombre}`);
+  }
 
-    public update(id: number, producto: notas): Observable<any> {
-        return this.httpClient.put<any>(this.notasURL + `updateNotas/${id}`, producto);
-      }
+  public detail(id: number): Observable<notas>
+  {
+    return this.httpClient.get<notas>(this.notasURL + `detailNotas/${id}`);
+  }
+
+  public update(id: number, nota: notas): Observable<notas>
+  {
+    return this.httpClient.put<notas>(this.notasURL + `updateNotas/${id}`, nota);
+  }
 }

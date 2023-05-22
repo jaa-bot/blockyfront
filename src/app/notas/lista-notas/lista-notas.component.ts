@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { notas } from 'src/app/models/notas';
 import { usuario } from 'src/app/models/usuario';
@@ -12,7 +11,8 @@ import { UsuarioService } from 'src/app/service/usuario.service';
   templateUrl: './lista-notas.component.html',
   styleUrls: ['./lista-notas.component.css']
 })
-export class ListaNotasComponent implements OnInit {
+export class ListaNotasComponent implements OnInit
+{
 
   notas!: notas[];
   nota!: notas;
@@ -28,33 +28,23 @@ export class ListaNotasComponent implements OnInit {
     private usuarioService: UsuarioService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void
+  {
     this.cargarNotas();
-    
+
   }
-
-  cargarNotas(): void {
-
-    this.notasService.lista().subscribe(
-      data => {
-        this.notas = data;
-      },
-      err => {
-        console.log(err);
-      }
-    );
-    this.obtenerId();
-  }
-
-  borrarNota(id: number) {
+  borrarNota(id: number)
+  {
     this.notasService.delete(id).subscribe(
-      data => {
+      data =>
+      {
         this.toastr.success('Nota Eliminda', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
         this.cargarNotas();
       },
-      err => {
+      err =>
+      {
         this.toastr.error(err.error.mensaje, 'Fail', {
           timeOut: 3000, positionClass: 'toast-top-center',
         });
@@ -62,14 +52,27 @@ export class ListaNotasComponent implements OnInit {
     );
   }
 
-  obtenerId(){
+  cargarNotas()
+  {
     this.nombreUsuario = this.tokenService.getUserName() ?? '';
     this.usuarioService.detailName(this.nombreUsuario).subscribe(
-      data => {
+      data =>
+      {
         this.usuario = data;
         this.idUser = this.usuario.id;
+        this.notasService.listaNotasPorUsuario(this.idUser).subscribe(
+          data =>
+          {
+            this.notas = data;
+          },
+          err =>
+          {
+            console.log(err);
+          }
+        );
       },
-      err => {
+      err =>
+      {
         console.log(err);
       }
     );
