@@ -22,6 +22,8 @@ import { DetallesNotasComponent } from './notas/detalles-notas/detalles-notas.co
 import { EditarNotasComponent } from './notas/editar-notas/editar-notas.component';
 import { ListaNotasComponent } from './notas/lista-notas/lista-notas.component';
 import { NuevaNotaComponent } from './notas/nueva-nota/nueva-nota.component';
+import { PerfilComponent } from './usuarios/perfil/perfil.component';
+import { EditarPerfilComponent } from './usuarios/editar-perfil/editar-perfil.component';
 
 
 
@@ -40,6 +42,8 @@ import { NuevaNotaComponent } from './notas/nueva-nota/nueva-nota.component';
     EditarNotasComponent,
     ListaNotasComponent,
     NuevaNotaComponent,
+    PerfilComponent,
+    EditarPerfilComponent,
   ],
   imports: [
     BrowserModule,

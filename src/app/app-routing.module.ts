@@ -12,6 +12,8 @@ import { ListaNotasComponent } from './notas/lista-notas/lista-notas.component';
 import { NuevaNotaComponent } from './notas/nueva-nota/nueva-nota.component';
 import { DetallesNotasComponent } from './notas/detalles-notas/detalles-notas.component';
 import { EditarNotasComponent } from './notas/editar-notas/editar-notas.component';
+import { PerfilComponent } from './usuarios/perfil/perfil.component';
+import { EditarPerfilComponent } from './usuarios/editar-perfil/editar-perfil.component';
 
 
 
@@ -26,6 +28,8 @@ const routes: Routes = [
   { path: 'nuevo/:id', component: NuevoProductoComponent, canActivate: [guard], data: { expectedRol: ['admin'] } },
   { path: 'nuevoNotas', component: NuevaNotaComponent, canActivate: [guard], data: { expectedRol: ['admin','user'] } },
   { path: 'editar/:id', component: EditarProductoComponent, canActivate: [guard], data: { expectedRol: ['admin'] } },
+  { path: 'editarPerfil/:id', component: EditarPerfilComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user'] } },
+  { path: 'perfil', component: PerfilComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user'] } },
   { path: 'editarNotas/:id', component: EditarNotasComponent, canActivate: [guard], data: { expectedRol: ['admin','user'] } },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
