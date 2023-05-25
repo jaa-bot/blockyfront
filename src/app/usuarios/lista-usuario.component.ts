@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { usuario } from '../models/usuario';
+import { Usuario } from '../models/usuario';
 import { UsuarioService } from '../service/usuario.service';
 import { ToastrService } from 'ngx-toastr';
 import { TokenService } from '../service/token.service';
@@ -11,7 +11,7 @@ import { TokenService } from '../service/token.service';
 })
 export class ListaProductoComponent implements OnInit {
 
-  productos!: usuario[];
+  productos!: Usuario[];
   roles!: string[] | null;
   isAdmin = false;
 

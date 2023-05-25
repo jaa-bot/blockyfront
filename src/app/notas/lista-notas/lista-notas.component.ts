@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { notas } from 'src/app/models/notas';
-import { usuario } from 'src/app/models/usuario';
+import { Notas } from 'src/app/models/notas';
+import { Usuario } from 'src/app/models/usuario';
 import { NotasService } from 'src/app/service/notas.service';
 import { TokenService } from 'src/app/service/token.service';
 import { UsuarioService } from 'src/app/service/usuario.service';
@@ -13,14 +13,14 @@ import { UsuarioService } from 'src/app/service/usuario.service';
 })
 export class ListaNotasComponent implements OnInit {
 
-  notas: notas[] = [];
-  nota!: notas;
-  notasUsuario: notas[] = [];
-  usuario!: usuario;
+  notas: Notas[] = [];
+  nota!: Notas;
+  notasUsuario: Notas[] = [];
+  usuario!: Usuario;
   idUser!: number;
   nombreUsuario!: string;
   searchText!: string;
-  filteredNotas: notas[] = [];
+  filteredNotas: Notas[] = [];
 
   constructor(
     private notasService: NotasService,

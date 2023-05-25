@@ -52,8 +52,10 @@ export class LoginComponent implements OnInit {
       },
       err => {
         this.isLogged = false;
-        this.errMsj = err.error.message;
-        this.toastr.error(this.errMsj, 'Fail', {
+        //this.errMsj = err.error.message;
+        this.nombreUsuario = '';
+        this.password = '';
+        this.toastr.error(this.errMsj, 'Contraseña o nombre usuario incorrecto', {
           timeOut: 3000,  positionClass: 'toast-top-center',
         });
         // console.log(err.error.message);

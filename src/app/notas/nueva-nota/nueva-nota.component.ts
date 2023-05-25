@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { notas } from 'src/app/models/notas';
-import { usuario } from 'src/app/models/usuario';
+import { Notas } from 'src/app/models/notas';
+import { Usuario } from 'src/app/models/usuario';
 import { NotasService } from 'src/app/service/notas.service';
 import { TokenService } from 'src/app/service/token.service';
 import { UsuarioService } from 'src/app/service/usuario.service';
@@ -17,7 +17,7 @@ export class NuevaNotaComponent implements OnInit {
   titulo = '';
   texto = '';
   idUser! : number;
-  usuario! : usuario;
+  usuario! : Usuario;
   nombreUsuario = '';
 
   constructor(
@@ -36,7 +36,7 @@ export class NuevaNotaComponent implements OnInit {
 
   onCreate(): void {
 
-    const nota = new notas(this.idUser, this.titulo,this.texto);
+    const nota = new Notas(this.idUser, this.titulo,this.texto);
     this.notasService.nuevo(nota).subscribe(
       data => {
         this.toastr.success('Nota Creada', 'OK', {

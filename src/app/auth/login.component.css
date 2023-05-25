@@ -1,0 +1,57 @@
+/* estilos.css */
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.container {
+  background-color: #494949;
+  color: white;
+  animation: fadeIn 1s ease-in;
+}
+
+.card {
+  background-color: black;
+  color: white;
+}
+
+.card-header {
+  background-color: #333;
+}
+
+.card-body {
+  background-color: #222;
+}
+
+.form-control {
+  background-color: #494949;
+  color: white;
+  border: none; /* Oculta los bordes de los cuadros de texto */
+  outline: none; /* Oculta el contorno al enfocar los cuadros de texto */
+}
+
+.btn {
+  color: white;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.btn:hover {
+  background-color: #138496;
+  border-color: #138496;
+}
+
+.btn:active {
+  background-color: black; /* Cambia el color de fondo al hacer clic */
+  border-color: black; /* Cambia el color del borde al hacer clic */
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}

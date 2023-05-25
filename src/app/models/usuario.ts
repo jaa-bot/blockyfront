@@ -1,4 +1,4 @@
-export class usuario {
+export class Usuario {
     id!: number;
     nombre: string;
     nombreUsuario: string;
@@ -12,35 +12,35 @@ export class usuario {
       this.password = password;
     }
   
-    getNombre(): string {
+    public getNombre(): string {
       return this.nombre;
     }
   
-    setNombre(nombre: string): void {
+    public setNombre(nombre: string): void {
       this.nombre = nombre;
     }
   
-    getNombreUsuario(): string {
+    public getNombreUsuario(): string {
       return this.nombreUsuario;
     }
   
-    setNombreUsuario(nombreUsuario: string): void {
+    public setNombreUsuario(nombreUsuario: string): void {
       this.nombreUsuario = nombreUsuario;
     }
   
-    getEmail(): string {
+    public getEmail(): string {
       return this.email;
     }
   
-    setEmail(email: string): void {
+    public setEmail(email: string): void {
       this.email = email;
     }
   
-    getPassword(): string {
+    public getPassword(): string {
       return this.password;
     }
   
-    setPassword(password: string): void {
+    public setPassword(password: string): void {
       this.password = password;
     }
   }

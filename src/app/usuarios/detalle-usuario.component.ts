@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../service/usuario.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { usuario } from '../models/usuario';
+import { Usuario } from '../models/usuario';
 
 @Component({
   selector: 'app-detalle-usuario',
@@ -11,7 +11,7 @@ import { usuario } from '../models/usuario';
 })
 export class DetalleProductoComponent implements OnInit {
 
-  producto!: usuario;
+  producto!: Usuario;
 
   constructor(
     private productoService: UsuarioService,

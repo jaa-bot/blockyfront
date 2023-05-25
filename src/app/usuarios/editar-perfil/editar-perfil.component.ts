@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { usuario } from 'src/app/models/usuario';
+import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/service/usuario.service';
 
 @Component({
@@ -11,7 +11,8 @@ import { UsuarioService } from 'src/app/service/usuario.service';
 })
 export class EditarPerfilComponent implements OnInit {
 
-  producto!: usuario;
+  producto!: Usuario;
+  newPassword: string = '';
 
   constructor(
     private productoService: UsuarioService,
@@ -28,7 +29,7 @@ export class EditarPerfilComponent implements OnInit {
       },
       err => {
         this.toastr.error(err.error.mensaje, 'Fail', {
-          timeOut: 3000,  positionClass: 'toast-top-center',
+          timeOut: 3000, positionClass: 'toast-top-center',
         });
         this.router.navigate(['/']);
       }
@@ -36,8 +37,9 @@ export class EditarPerfilComponent implements OnInit {
   }
 
   onUpdate(): void {
+    const newUsuario = new Usuario(this.producto.nombre, this.producto.nombreUsuario, this.producto.email, this.newPassword);
     const id = this.activatedRoute.snapshot.params['id'];
-    this.productoService.update(id, this.producto).subscribe(
+    this.productoService.update(id, newUsuario).subscribe(
       data => {
         this.toastr.success('Producto Actualizado', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'
@@ -46,7 +48,7 @@ export class EditarPerfilComponent implements OnInit {
       },
       err => {
         this.toastr.error(err.error.mensaje, 'Fail', {
-          timeOut: 3000,  positionClass: 'toast-top-center',
+          timeOut: 3000, positionClass: 'toast-top-center',
         });
         // this.router.navigate(['/']);
       }

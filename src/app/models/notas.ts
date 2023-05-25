@@ -1,6 +1,4 @@
-import { usuario } from "./usuario";
-
-export class notas{
+export class Notas{
     id!: number;
     userId: number;
     titulo: string;

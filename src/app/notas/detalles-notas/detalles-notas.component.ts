@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { notas } from 'src/app/models/notas';
+import { Notas } from 'src/app/models/notas';
 import { NotasService } from 'src/app/service/notas.service';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class DetallesNotasComponent implements OnInit{
 
-  notas!: notas;
+  notas!: Notas;
 
   constructor(
     private notasService: NotasService,

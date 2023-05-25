@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { usuario } from 'src/app/models/usuario';
+import { Usuario } from 'src/app/models/usuario';
 import { TokenService } from 'src/app/service/token.service';
 import { UsuarioService } from 'src/app/service/usuario.service';
 
@@ -12,7 +12,7 @@ import { UsuarioService } from 'src/app/service/usuario.service';
 })
 export class PerfilComponent implements OnInit {
 
-  producto!: usuario;
+  producto!: Usuario;
   nombreUsuario!: string;
 
   constructor(
