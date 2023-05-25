@@ -1,7 +1,8 @@
 
   body {
     background-size: cover;
-    background-color:#7C7C7C;
+    height: 100vh;
+    background-image: url(../../assets/img/fondo.jpg);
     background-repeat: no-repeat;
   }
   
