@@ -37,7 +37,7 @@ export class EditarProductoComponent implements OnInit {
 
   onUpdate(): void {
     const id = this.activatedRoute.snapshot.params['id'];
-    this.productoService.update(id, this.producto).subscribe(
+    this.productoService.updateAdmin(id, this.producto).subscribe(
       data => {
         this.toastr.success('Producto Actualizado', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'

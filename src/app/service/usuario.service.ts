@@ -8,31 +8,35 @@ import { Usuario } from '../models/usuario';
 })
 export class UsuarioService {
 
-  productoURL = 'http://localhost:8090/usuario/';
+  usuarioURL = 'http://localhost:8090/usuario/';
 
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Usuario[]> {
-    return this.httpClient.get<Usuario[]>(this.productoURL + 'lista');
+    return this.httpClient.get<Usuario[]>(this.usuarioURL + 'lista');
   }
 
   public detail(id: number): Observable<Usuario> {
-    return this.httpClient.get<Usuario>(this.productoURL + `detail/${id}`);
+    return this.httpClient.get<Usuario>(this.usuarioURL + `detail/${id}`);
   }
 
   public detailName(nombre: string): Observable<any> {
-    return this.httpClient.get<any>(this.productoURL + `detailnameUser/${nombre}`);
+    return this.httpClient.get<any>(this.usuarioURL + `detailnameUser/${nombre}`);
   }
 
-  public save(producto: Usuario): Observable<any> {
-    return this.httpClient.post<any>(this.productoURL + 'auth/nuevo', producto);
+  public save(usuario: Usuario): Observable<any> {
+    return this.httpClient.post<any>(this.usuarioURL + 'auth/nuevo', usuario);
   }
 
-  public update(id: number, producto: Usuario): Observable<any> {
-    return this.httpClient.put<any>(this.productoURL + `update/${id}`, producto);
+  public update(id: number, usuario: Usuario): Observable<any> {
+    return this.httpClient.put<any>(this.usuarioURL + `update/${id}`, usuario);
+  }
+
+  public updateAdmin(id: number, usuario: Usuario): Observable<any> {
+    return this.httpClient.put<any>(this.usuarioURL + `updateAdmin/${id}`, usuario);
   }
 
   public delete(id: number): Observable<any> {
-    return this.httpClient.delete<any>(this.productoURL + `delete/${id}`);
+    return this.httpClient.delete<any>(this.usuarioURL + `delete/${id}`);
   }
 }
