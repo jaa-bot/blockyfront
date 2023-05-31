@@ -1,10 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     
-    background-color:#494949;
+    background-color: rgb(224, 224, 224);
     background-size: cover;
     height: 100vh;
     /*background-image: url(../../assets/img/fondo.jpg);*/
     background-repeat: no-repeat;
+    color: black;
+    
+  }
+
+  .btn {
+    margin-right: 10px;
+    border-radius: 20px;
+    padding: 8px 16px;
+  }
+
+  button.btn-outline-success {
+    background-color: #2BEA56;
     color: white;
+    border-color: #28a745;
+  }
+  
+  button.btn-outline-success:hover {
+    background-color: #28a745;
+    border-color: #28a745;
   }

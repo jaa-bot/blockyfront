@@ -24,6 +24,7 @@ import { ListaNotasComponent } from './notas/lista-notas/lista-notas.component';
 import { NuevaNotaComponent } from './notas/nueva-nota/nueva-nota.component';
 import { PerfilComponent } from './usuarios/perfil/perfil.component';
 import { EditarPerfilComponent } from './usuarios/editar-perfil/editar-perfil.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -44,6 +45,7 @@ import { EditarPerfilComponent } from './usuarios/editar-perfil/editar-perfil.co
     NuevaNotaComponent,
     PerfilComponent,
     EditarPerfilComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,33 +1,41 @@
 <app-menu></app-menu>
-<div class="container" *ngIf="producto">
+<div class="container" *ngIf="producto" class="fade-in">
     <div class="row mt-5">
         <div class="col-md-4 mx-auto">
-            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm" class="user-form">
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre"
-                    [(ngModel)]="producto.nombre" required>
+                    <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="producto.nombre"
+                        required>
                 </div>
                 <div class="form-group">
                     <label for="nombreUsuario">Nombre usuario</label>
                     <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario"
-                    [(ngModel)]="producto.nombreUsuario" required>
+                        [(ngModel)]="producto.nombreUsuario" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="text" class="form-control" id="email" name="email"
-                    [(ngModel)]="producto.email" required>
+                        pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}"
+                        [(ngModel)]="producto.email" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Contraseña</label>
-                    <input type="password" class="form-control" id="password"name="password" placeholder="Nueva contraseña..."
-                    [(ngModel)]="newPassword" required>
+                    <input type="password" class="form-control" id="password" name="password"
+                        placeholder="Nueva contraseña..." [(ngModel)]="newPassword" required>
                 </div>
-                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
-                    <i class="fas fa-pencil-alt"></i> Actualizar</button>
-                <button class="btn btn-outline-primary btn-block" routerLink="/listaNotas">
-                    <i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+                <div class="button-container" style="margin-top: 20px;">
+                    <button class="btn btn-outline-success" [disabled]="!f.valid">
+                        <i class="fas fa-pencil-alt"></i> Actualizar
+                    </button>
+                    <button class="btn btn-outline-primary" routerLink="/listaNotas">
+                        <i class="fas fa-arrow-alt-circle-left"></i> Volver
+                    </button>
+                </div>
+
+
             </form>
         </div>
     </div>
 </div>
+<app-footer></app-footer>

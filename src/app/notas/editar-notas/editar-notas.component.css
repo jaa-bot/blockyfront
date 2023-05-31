@@ -1,0 +1,33 @@
+.user-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  margin-top: 100px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.fade-in {
+  animation: fade-in 0.5s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn-block {
+  display: inline-block;
+  width: auto;
+  margin-right: 10px;
+}

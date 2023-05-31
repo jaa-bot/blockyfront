@@ -21,12 +21,13 @@ export class ListaNotasComponent implements OnInit {
   nombreUsuario!: string;
   searchText!: string;
   filteredNotas: Notas[] = [];
+  isClickedOutsideSearch: boolean = false;
 
   constructor(
     private notasService: NotasService,
     private tokenService: TokenService,
     private toastr: ToastrService,
-    private usuarioService: UsuarioService
+    private usuarioService: UsuarioService,
   ) {
     this.searchText = '';
   }
@@ -75,6 +76,19 @@ export class ListaNotasComponent implements OnInit {
 
   filterNotas() {
     this.filteredNotas = this.notas.filter(nota => nota.titulo.toLowerCase().includes(this.searchText.toLowerCase()));
-    console.log(this.searchText)
+    this.isClickedOutsideSearch = false;
   }
+
+  confirmarBorrar(id: number): void {
+    if (confirm('¿Estás seguro de que quieres eliminar este usuario?')) {
+      this.borrarNota(id);
+    }
+  }
+
+  clearSearchText() {
+    this.searchText = '';
+    this.isClickedOutsideSearch = true;
+    this.cargarNotas();
+  }
+  
 }

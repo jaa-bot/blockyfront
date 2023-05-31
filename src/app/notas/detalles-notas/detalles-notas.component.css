@@ -1,0 +1,27 @@
+.container {
+    margin-top: 100px;
+  }
+  
+  .card {
+    text-align: center;
+  }
+  
+  .animated {
+    animation-duration: 1s;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fadeIn {
+    animation-name: fadeIn;
+  }
+  

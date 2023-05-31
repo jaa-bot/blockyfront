@@ -1,8 +1,30 @@
 .navbar-nav.ml-auto {
     margin-left: auto;
+    
   }
   
   .navbar-nav.ml-auto .nav-link {
     margin-left: 15px;
   }
+
+  .navbar {
+    background-color: #5a5a5a;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+  }
+  
   

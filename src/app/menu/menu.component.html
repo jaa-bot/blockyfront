@@ -1,5 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-  <a class="navbar-brand" href="#">Blocky</a>
+  <a class="navbar-brand" href="#">
+    <i class="fas fa-cubes"></i> Blocky
+  </a>  
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -15,7 +17,7 @@
         <a class="nav-link" routerLink="/listaNotas"><i class="far fa-list-alt"></i> Notas</a>
       </li>
       <li class="nav-item" *ngIf="isLogged && !isAdmin">
-        <a class="nav-link" routerLink="/perfil"><i class="far fa-list-alt"></i> Perfil</a>
+        <a class="nav-link" routerLink="/perfil"><i class="fas fa-user"></i> Perfil</a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">

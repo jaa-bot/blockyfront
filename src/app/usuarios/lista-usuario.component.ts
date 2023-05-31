@@ -23,7 +23,7 @@ export class ListaProductoComponent implements OnInit {
 
   ngOnInit() {
     this.cargarProductos();
-    this.roles = this.tokenService.getAuthorities()?? [];
+    this.roles = this.tokenService.getAuthorities() ?? [];
     this.roles.forEach(rol => {
       if (rol === 'ROLE_ADMIN') {
         this.isAdmin = true;
@@ -57,5 +57,12 @@ export class ListaProductoComponent implements OnInit {
       }
     );
   }
+
+  confirmarBorrar(id: number): void {
+    if (confirm('¿Estás seguro de que quieres eliminar este usuario?')) {
+      this.borrar(id);
+    }
+  }
+
 
 }
