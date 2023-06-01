@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TokenWeb } from '../models/tokenWeb';
 
@@ -12,16 +12,16 @@ export class TokenWebService {
 
     constructor(private httpClient: HttpClient) { }
 
-    public lista(): Observable<PushSubscription[]> {
-        return this.httpClient.get<PushSubscription[]>(this.usuarioURL + 'lista');
+    public lista(): Observable<TokenWeb[]> {
+        return this.httpClient.get<TokenWeb[]>(this.usuarioURL + 'lista');
     }
 
-    public detail(id: number): Observable<PushSubscription> {
-        return this.httpClient.get<PushSubscription>(this.usuarioURL + `detailUser/${id}`);
+    public detail(id: number): Observable<TokenWeb> {
+        return this.httpClient.get<TokenWeb>(this.usuarioURL + `detailUser/${id}`);
     }
 
-    public save(usuario: PushSubscription): Observable<any> {
-        return this.httpClient.post<any>(this.usuarioURL + 'nuevoToken', usuario);
+    public save(data: any): Observable<any> {
+        return this.httpClient.post<any>(this.usuarioURL + 'nuevoToken', data);
     }
 
 }
