@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +25,7 @@ import { NuevaNotaComponent } from './notas/nueva-nota/nueva-nota.component';
 import { PerfilComponent } from './usuarios/perfil/perfil.component';
 import { EditarPerfilComponent } from './usuarios/editar-perfil/editar-perfil.component';
 import { FooterComponent } from './footer/footer.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 
@@ -53,7 +54,13 @@ import { FooterComponent } from './footer/footer.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [interceptorProvider],
   bootstrap: [AppComponent]
