@@ -19,7 +19,8 @@ import { TokenWeb } from '../models/tokenWeb';
 export class LoginComponent implements OnInit {
 
   respuesta: any;
-  readonly VAPID_PUBLIC_KEY = "BMtQTXeTAMb6dirLG0o2oMENske28eSfSRJkK6VEdXH9lcH3mwfEU7cza8hNhEnJOOyacb95QOeIFaTpPdFn8Xw";
+  readonly VAPID_PUBLIC_KEY = "BJ8-Fw6EbNzCZ3vNsyUSkhm4WBHD_BrPSf-1V488sGfoxPG6rBy9iPa9P4O7j1mf0sdkk_cD42JIzW7FAHS5fTc";
+  readonly VAPID_PRIVATE_KEY = "XUVdHKs0lPt4B0odEIY7JiFnhlxmPv-Gcb0m4-uZ3jQ";
 
   isLogged = false;
   isLoginFail = false;
@@ -79,6 +80,8 @@ export class LoginComponent implements OnInit {
 
   subscribeToNotifications() {
 
+
+
     this.swPush.requestSubscription({
       serverPublicKey: this.VAPID_PUBLIC_KEY
     }).then(tokens => {
@@ -101,6 +104,26 @@ export class LoginComponent implements OnInit {
     }).catch(err => {
       this.respuesta = 'ERROR de permiso o navegador no soportado';
     });
+  }
+
+  subscribeUserToPush() {
+    return navigator.serviceWorker
+      .register('/service-worker.js')
+      .then(function (registration) {
+        const subscribeOptions = {
+          userVisibleOnly: true,
+          applicationServerKey: "uwu",
+        };
+  
+        return registration.pushManager.subscribe(subscribeOptions);
+      })
+      .then(function (pushSubscription) {
+        console.log(
+          'Received PushSubscription: ',
+          JSON.stringify(pushSubscription),
+        );
+        return pushSubscription;
+      });
   }
 
   bufferToBase64Url(buffer: ArrayBuffer): string {
