@@ -1,13 +1,13 @@
 export class TokenWeb{
-    userId: number;
     endpoint: string;
     auth: string;
     p256dh: string;
+    userId: number;
 
-    constructor(userId: number, endpoint: string, auth: string, p256dh: string) {
-        this.userId = userId;
+    constructor(endpoint: string, auth: string, p256dh: string, userId: number) {
         this.endpoint = endpoint;
         this.auth = auth;
         this.p256dh = p256dh;
+        this.userId = userId;
     }
 }

@@ -20,8 +20,7 @@ export class TokenWebService {
         return this.httpClient.get<TokenWeb>(this.usuarioURL + `detailUser/${id}`);
     }
 
-    public save(data: any): Observable<any> {
-        return this.httpClient.post<any>(this.usuarioURL + 'nuevoToken', data);
+    public save(tokenWeb: TokenWeb): Observable<TokenWeb> {
+        return this.httpClient.post<TokenWeb>(this.usuarioURL + 'nuevoToken', tokenWeb);
     }
-
 }
