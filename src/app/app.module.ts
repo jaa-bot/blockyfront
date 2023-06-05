@@ -25,6 +25,10 @@ import { NuevaNotaComponent } from './notas/nueva-nota/nueva-nota.component';
 import { PerfilComponent } from './usuarios/perfil/perfil.component';
 import { EditarPerfilComponent } from './usuarios/editar-perfil/editar-perfil.component';
 import { FooterComponent } from './footer/footer.component';
+import { RedactarContactoComponent } from './contacto/redactar-contacto/redactar-contacto.component';
+import { EnviadosContactoComponent } from './contacto/enviados-contacto/enviados-contacto.component';
+import { RecibidosContactoComponent } from './contacto/recibidos-contacto/recibidos-contacto.component';
+import { ResponderCorreoComponent } from './contacto/responder-correo/responder-correo.component';
 
 
 
@@ -46,6 +50,10 @@ import { FooterComponent } from './footer/footer.component';
     PerfilComponent,
     EditarPerfilComponent,
     FooterComponent,
+    RedactarContactoComponent,
+    EnviadosContactoComponent,
+    RecibidosContactoComponent,
+    ResponderCorreoComponent,
   ],
   imports: [
     BrowserModule,

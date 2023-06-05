@@ -1,30 +1,76 @@
-.navbar-nav.ml-auto {
-    margin-left: auto;
-    
-  }
-  
-  .navbar-nav.ml-auto .nav-link {
-    margin-left: 15px;
+.navbar-nav.ml-auto .nav-link {
+  margin-left: 15px;
+}
+
+.navbar {
+  background-color: #5a5a5a;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
   }
 
-  .navbar {
-    background-color: #5a5a5a;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .fadeIn {
-    animation-name: fadeIn;
-    animation-duration: 1s;
-  }
-  
-  
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
+
+.navbar-nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  display: inline-block;
+  position: relative;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #5a5a5a;
+  min-width: 200px;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.nav-item:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+
+.dropdown-menu a {
+  color: white;
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+  background-color: #28242c;
+}

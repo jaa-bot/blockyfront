@@ -14,6 +14,10 @@ import { DetallesNotasComponent } from './notas/detalles-notas/detalles-notas.co
 import { EditarNotasComponent } from './notas/editar-notas/editar-notas.component';
 import { PerfilComponent } from './usuarios/perfil/perfil.component';
 import { EditarPerfilComponent } from './usuarios/editar-perfil/editar-perfil.component';
+import { RedactarContactoComponent } from './contacto/redactar-contacto/redactar-contacto.component';
+import { EnviadosContactoComponent } from './contacto/enviados-contacto/enviados-contacto.component';
+import { RecibidosContactoComponent } from './contacto/recibidos-contacto/recibidos-contacto.component';
+import { ResponderCorreoComponent } from './contacto/responder-correo/responder-correo.component';
 
 
 
@@ -31,6 +35,10 @@ const routes: Routes = [
   { path: 'editarPerfil/:id', component: EditarPerfilComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user'] } },
   { path: 'perfil', component: PerfilComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user'] } },
   { path: 'editarNotas/:id', component: EditarNotasComponent, canActivate: [guard], data: { expectedRol: ['admin','user'] } },
+  { path: 'redactar', component: RedactarContactoComponent, canActivate: [guard], data: { expectedRol: ['admin','user'] } },
+  { path: 'enviados', component: EnviadosContactoComponent, canActivate: [guard], data: { expectedRol: ['admin','user'] } },
+  { path: 'responder/:id', component: ResponderCorreoComponent, canActivate: [guard], data: { expectedRol: ['admin','user'] } },
+  { path: 'recibidos', component: RecibidosContactoComponent, canActivate: [guard], data: { expectedRol: ['admin','user'] } },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

@@ -1,0 +1,13 @@
+  .my-form {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  .input-text {
+    height: 40px;
+  }
+
+  .input-textarea {
+    height: 120px;
+  }

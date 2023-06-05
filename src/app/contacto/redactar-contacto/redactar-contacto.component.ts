@@ -1,51 +1,50 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Notas } from 'src/app/models/notas';
+import { Contacto } from 'src/app/models/contacto';
 import { Usuario } from 'src/app/models/usuario';
-import { NotasService } from 'src/app/service/notas.service';
+import { ContactoService } from 'src/app/service/contacto.service';
 import { TokenService } from 'src/app/service/token.service';
 import { UsuarioService } from 'src/app/service/usuario.service';
 
 @Component({
-  selector: 'app-nueva-nota',
-  templateUrl: './nueva-nota.component.html',
-  styleUrls: ['./nueva-nota.component.css']
+  selector: 'app-redactar-contacto',
+  templateUrl: './redactar-contacto.component.html',
+  styleUrls: ['./redactar-contacto.component.css']
 })
-export class NuevaNotaComponent implements OnInit {
+export class RedactarContactoComponent implements OnInit {
 
   titulo = '';
-  texto = '';
+  descripcion = '';
   idUser! : number;
   usuario! : Usuario;
   nombreUsuario = '';
 
-  constructor(
-    private notasService: NotasService,
+  constructor(private contactoService: ContactoService,
     private tokenService: TokenService,
     private toastr: ToastrService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private usuarioService: UsuarioService
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.obtenerId();
   }
 
-
   onCreate(): void {
-    const nota = new Notas(this.idUser, this.titulo,this.texto);
-    this.notasService.nuevo(nota).subscribe(
+
+    const contacto = new Contacto(this.titulo, this.descripcion, this.idUser, 1);
+    this.contactoService.nuevo(contacto).subscribe(
       data => {
-        this.toastr.success('Nota Creada', 'OK', {
+        this.toastr.success('Correo Enviado', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
-        this.router.navigate(['/listaNotas']);
+        this.router.navigate(['/recibidos']);
       },
       err => {
         this.toastr.error(err.error.mensaje, 'Fail', {
-          timeOut: 3000,  positionClass: 'toast-top-center',
+          timeOut: 3000, positionClass: 'toast-top-center',
         });
         // this.router.navigate(['/']);
       }
@@ -64,4 +63,5 @@ export class NuevaNotaComponent implements OnInit {
       }
     );
   }
+
 }
