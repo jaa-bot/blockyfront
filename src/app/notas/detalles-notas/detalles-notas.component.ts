@@ -26,6 +26,7 @@ export class DetallesNotasComponent implements OnInit{
     this.notasService.detail(id).subscribe(
       data => {
         this.notas = data;
+        console.log(this.notas)
       },
       err => {
         this.toastr.error(err.error.mensaje, 'Fail', {

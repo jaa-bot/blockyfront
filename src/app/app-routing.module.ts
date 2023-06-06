@@ -18,6 +18,7 @@ import { RedactarContactoComponent } from './contacto/redactar-contacto/redactar
 import { EnviadosContactoComponent } from './contacto/enviados-contacto/enviados-contacto.component';
 import { RecibidosContactoComponent } from './contacto/recibidos-contacto/recibidos-contacto.component';
 import { ResponderCorreoComponent } from './contacto/responder-correo/responder-correo.component';
+import { DetallesContactoComponent } from './contacto/detalles-contacto/detalles-contacto.component';
 
 
 
@@ -39,6 +40,7 @@ const routes: Routes = [
   { path: 'enviados', component: EnviadosContactoComponent, canActivate: [guard], data: { expectedRol: ['admin','user'] } },
   { path: 'responder/:id', component: ResponderCorreoComponent, canActivate: [guard], data: { expectedRol: ['admin','user'] } },
   { path: 'recibidos', component: RecibidosContactoComponent, canActivate: [guard], data: { expectedRol: ['admin','user'] } },
+  { path: 'verCorreo/:id', component: DetallesContactoComponent, canActivate: [guard], data: { expectedRol: ['admin','user'] } },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

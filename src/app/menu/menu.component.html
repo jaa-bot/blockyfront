@@ -24,12 +24,12 @@
       </li>
       <li class="nav-item dropdown" *ngIf="isLogged">
         <a class="nav-link dropdown-toggle" href="/recibidos" id="contactDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-envelope"></i> Contacto
+          <i *ngIf="isLogged" class="fas fa-envelope"></i> Contacto
         </a>
         <div class="dropdown-menu" aria-labelledby="contactDropdown">
           <a class="dropdown-item" routerLink="/recibidos"><i class="fas fa-inbox"></i> Recibidos</a>
           <a class="dropdown-item" routerLink="/enviados"><i class="fas fa-paper-plane"></i> Enviados</a>
-          <a class="dropdown-item" routerLink="/redactar"><i class="fas fa-edit"></i> Redactar</a>
+          <a class="dropdown-item" *ngIf="!isAdmin" routerLink="/redactar"><i class="fas fa-edit"></i> Redactar</a>
         </div>
       </li>
       <li class="nav-item" *ngIf="!isLogged">

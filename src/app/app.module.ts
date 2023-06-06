@@ -29,6 +29,7 @@ import { RedactarContactoComponent } from './contacto/redactar-contacto/redactar
 import { EnviadosContactoComponent } from './contacto/enviados-contacto/enviados-contacto.component';
 import { RecibidosContactoComponent } from './contacto/recibidos-contacto/recibidos-contacto.component';
 import { ResponderCorreoComponent } from './contacto/responder-correo/responder-correo.component';
+import { DetallesContactoComponent } from './contacto/detalles-contacto/detalles-contacto.component';
 
 
 
@@ -54,6 +55,7 @@ import { ResponderCorreoComponent } from './contacto/responder-correo/responder-
     EnviadosContactoComponent,
     RecibidosContactoComponent,
     ResponderCorreoComponent,
+    DetallesContactoComponent,
   ],
   imports: [
     BrowserModule,

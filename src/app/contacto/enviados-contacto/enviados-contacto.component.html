@@ -9,15 +9,15 @@
       <tr>
         <th scope="col">Id</th>
         <th scope="col">Nombre Usuario</th>
-        <th scope="col">Responder</th>
+        <th scope="col">Ver Correo Enviado</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let producto of notas">
-        <td>{{producto.id}}</td>
-        <td>{{producto.titulo}}</td>
-        <!--<td><button class="btn btn-outline-primary" routerLink="/detalle/{{producto.id}}"><i class="far fa-eye"></i>
-            Ver</button></td>-->
+      <tr *ngFor="let contacto of notas">
+        <td>{{contacto.id}}</td>
+        <td>{{contacto.titulo}}</td>
+        <td><button class="btn btn-outline-primary" routerLink="/verCorreo/{{contacto.id}}"><i class="far fa-eye"></i>
+            Ver</button></td>
       </tr>
     </tbody>
   </table>
