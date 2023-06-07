@@ -9,7 +9,13 @@ import { TokenService } from '../service/token.service';
 export class IndexComponent implements OnInit {
 
   isLogged = false;
-  nombreUsuario!: string | null;
+  nombreUsuario: string | null = null;
+  contenidoIndex = 0;
+  contenidos: string[] = [
+    '¿Qué es un blog de notas?',
+    'Contenido 2',
+    'Contenido 3'
+  ];
 
   constructor(private tokenService: TokenService) { }
 
@@ -23,4 +29,15 @@ export class IndexComponent implements OnInit {
     }
   }
 
+  mostrarContenidoAnterior() {
+    if (this.contenidoIndex > 0) {
+      this.contenidoIndex--;
+    }
+  }
+
+  mostrarSiguienteContenido() {
+    if (this.contenidoIndex < this.contenidos.length - 1) {
+      this.contenidoIndex++;
+    }
+  }
 }

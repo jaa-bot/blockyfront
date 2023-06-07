@@ -10,24 +10,20 @@
   </div>
 
   <section>
-    <h2>¿Qué es un blog de notas?</h2>
-    <p>Un blog de notas es una herramienta en línea que permite a los usuarios tomar notas y guardarlas en la nube para acceder a ellas desde cualquier dispositivo con conexión a Internet. Los blogs de notas son muy útiles para organizarse, tomar notas durante una clase o una reunión, o simplemente para recordar algo importante que no se debe olvidar.</p>
+    <h2>{{contenidos[contenidoIndex]}}</h2>
+    <p *ngIf="contenidoIndex === 0">Un blog de notas es una herramienta en línea que permite a los usuarios tomar notas y guardarlas en la nube para acceder a ellas desde cualquier dispositivo con conexión a Internet. Los blogs de notas son muy útiles para organizarse, tomar notas durante una clase o una reunión, o simplemente para recordar algo importante que no se debe olvidar.</p>
+    <p *ngIf="contenidoIndex === 1">Las características de un blog de notas incluyen la accesibilidad desde cualquier dispositivo con conexión a Internet, almacenamiento en la nube para no perder las notas, organización de las notas por categorías o etiquetas, y la posibilidad de editar las notas en cualquier momento y lugar.</p>
+    <p *ngIf="contenidoIndex === 2">Para utilizar un blog de notas, simplemente necesitas crear una cuenta en uno de los muchos servicios disponibles en línea, como Evernote, OneNote o Google Keep. Una vez que hayas creado una cuenta, podrás comenzar a tomar notas, organizarlas y acceder a ellas desde cualquier dispositivo con conexión a Internet.</p>
   </section>
-  <section>
-    <h2>Características de un blog de notas</h2>
-    <ul>
-      <li>Accesibilidad desde cualquier dispositivo con conexión a Internet.</li>
-      <li>Almacenamiento en la nube para no perder las notas en caso de pérdida o daño del dispositivo.</li>
-      <li>Organización de las notas por categorías o etiquetas.</li>
-      <li>Edición de las notas en cualquier momento y lugar.</li>
-    </ul>
-  </section>
-  <section>
-    <h2>¿Cómo utilizar un blog de notas?</h2>
-    <p>Para utilizar un blog de notas, simplemente necesitas crear una cuenta en uno de los muchos servicios disponibles en línea, como Evernote, OneNote o Google Keep. Una vez que hayas creado una cuenta, podrás comenzar a tomar notas, organizarlas y acceder a ellas desde cualquier dispositivo con conexión a Internet.</p>
-  </section>
+
   <footer>
     <p>© 2023 Blog de Notas</p>
   </footer>
+
+  <div class="navigation-buttons">
+    <button (click)="mostrarContenidoAnterior()">Anterior</button>
+    <button (click)="mostrarSiguienteContenido()">Siguiente</button>
+  </div>
+
+  <app-footer></app-footer>
 </body>
-<app-footer></app-footer>
