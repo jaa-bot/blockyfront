@@ -1,6 +1,6 @@
 <body>
   <app-menu></app-menu>
-  <div class="container text-center">
+  <div class="container">
     <div *ngIf="isLogged; else loggedOut">
       <h2>Bienvenido {{nombreUsuario}}</h2>
     </div>
@@ -30,5 +30,4 @@
     <p>© 2023 Blog de Notas</p>
   </footer>
 </body>
-
 <app-footer></app-footer>
