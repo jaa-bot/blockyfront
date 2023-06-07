@@ -1,0 +1,93 @@
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .content-box {
+    position: relative;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .left-arrow {
+    left: -35px;
+  }
+  
+  .right-arrow {
+    right: -35px;
+  }
+
+  .content {
+    margin: 0 auto;
+    max-width: 1000px;
+    justify-content: center;
+  }
+  
+  .custom-image {
+    max-width: 40%;
+    height: auto;
+  }
+
+  .image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .custom-image {
+    width: 50%;
+    margin: 10px;
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  
+  .register-button {
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: #ff0000; /* Color de fondo del botón */
+    color: #ffffff; /* Color del texto del botón */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: buttonAnimation 1s ease-in-out infinite alternate;
+  }
+  
+  .register-button:hover {
+    background-color: #ff3333; /* Color de fondo del botón al pasar el cursor por encima */
+  }
+  
+  @keyframes buttonAnimation {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+  
+  
+  

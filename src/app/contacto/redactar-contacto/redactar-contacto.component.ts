@@ -14,13 +14,12 @@ import { UsuarioService } from 'src/app/service/usuario.service';
 })
 export class RedactarContactoComponent implements OnInit {
 
+  contacto!: Contacto
   titulo = '';
   descripcion = '';
-  idUser! : number;
-  usuario! : Usuario;
+  idUser!: number;
+  usuario!: Usuario;
   nombreUsuario = '';
-  roles!: string[];
-  isAdmin = false;
 
   constructor(private contactoService: ContactoService,
     private tokenService: TokenService,
@@ -31,28 +30,14 @@ export class RedactarContactoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    //this.obtenerId();
-
-    this.roles = this.tokenService.getAuthorities() ?? [];
-    this.roles.forEach(rol => {
-      if (rol === 'ROLE_ADMIN') {
-        this.isAdmin = true;
-      }
-    });
+    this.obtenerId();
   }
 
   onCreate(): void {
 
-    let contacto;
+    this.contacto = new Contacto(this.titulo, this.descripcion, this.idUser, 1);
 
-    if(this.isAdmin == true){
-      contacto = new Contacto(this.titulo, this.descripcion, 1, this.idUser);
-    }
-    else{
-      contacto = new Contacto(this.titulo, this.descripcion, this.idUser, 1);
-    }
-
-    this.contactoService.nuevo(contacto).subscribe(
+    this.contactoService.nuevo(this.contacto).subscribe(
       data => {
         this.toastr.success('Correo Enviado', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'

@@ -16,15 +16,15 @@
 }
 
 .card-header {
-  background-color: #5a5a5a;
+  background-color: #3a4450;
 }
 
 .card-body {
-  background-color: #5a5a5a;
+  background-color: #3a4450;
 }
 
 .form-control {
-  background-color: #494949;
+  background-color: #293038;
   color: white;
   border: none; /* Oculta los bordes de los cuadros de texto */
   outline: none; /* Oculta el contorno al enfocar los cuadros de texto */
@@ -53,4 +53,18 @@
 
 .text-center {
   text-align: center;
+}
+
+.custom-image {
+  max-width: 30%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

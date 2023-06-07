@@ -1,6 +1,6 @@
 <app-menu></app-menu>
 <div class="text-center" *ngIf="isLogged; else loggedOut">
-    <h2>Ya has iniciado sesión</h2>
+    <h2>Inicia sesion para utilizar las funcionalidades de la pagina</h2>
 </div>
 
 <ng-template #loggedOut>
@@ -14,8 +14,8 @@
                     <li class="nav-item">
                       <a class="nav-link" routerLink="/registro">Crear Cuenta</a>
                     </li>
-                    
                   </ul>
+                  <img src="../../assets/img/login.webp" alt="Descripción de la imagen" class="custom-image">
             </div>
             <div class="card-body">
                 <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>

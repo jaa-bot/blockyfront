@@ -63,6 +63,7 @@ import { DetallesContactoComponent } from './contacto/detalles-contacto/detalles
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     HttpClientModule,
+    BrowserAnimationsModule,
     FormsModule
   ],
   providers: [interceptorProvider],
