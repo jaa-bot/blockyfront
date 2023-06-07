@@ -17,7 +17,10 @@ export class RecibidosContactoComponent implements OnInit{
   nombreUsuario!: string;
   usuario!: Usuario;
   idUser!: number;
-  notas: Contacto[] = [];
+  contactos: Contacto[] = [];
+  roles!: string[] | null;
+  isAdmin = false;
+  idRemitente!: number;
 
   constructor(
     private contactoService: ContactoService,
@@ -28,6 +31,12 @@ export class RecibidosContactoComponent implements OnInit{
 
   ngOnInit(): void {
     this.cargarNotas();
+    this.roles = this.tokenService.getAuthorities() ?? [];
+    this.roles.forEach(rol => {
+      if (rol === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    });
   }
 
 
@@ -40,7 +49,8 @@ export class RecibidosContactoComponent implements OnInit{
         this.idUser = this.usuario.id;
         this.contactoService.contactoPorDestinatario(this.idUser).subscribe(
           data => {
-            this.notas = data;
+            console.log(data)
+            this.contactos = data;
           },
           err => {
             console.log(err);

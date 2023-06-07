@@ -14,7 +14,7 @@ export class EditarProductoComponent implements OnInit {
   producto!: Usuario;
 
   constructor(
-    private productoService: UsuarioService,
+    private usuarioService: UsuarioService,
     private activatedRoute: ActivatedRoute,
     private toastr: ToastrService,
     private router: Router
@@ -22,7 +22,7 @@ export class EditarProductoComponent implements OnInit {
 
   ngOnInit() {
     const id = this.activatedRoute.snapshot.params['id'];
-    this.productoService.detail(id).subscribe(
+    this.usuarioService.detail(id).subscribe(
       data => {
         this.producto = data;
       },
@@ -37,7 +37,7 @@ export class EditarProductoComponent implements OnInit {
 
   onUpdate(): void {
     const id = this.activatedRoute.snapshot.params['id'];
-    this.productoService.updateAdmin(id, this.producto).subscribe(
+    this.usuarioService.updateAdmin(id, this.producto).subscribe(
       data => {
         this.toastr.success('Producto Actualizado', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'

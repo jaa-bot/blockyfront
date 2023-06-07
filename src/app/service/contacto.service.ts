@@ -31,7 +31,7 @@ export class ContactoService {
     {
       return this.httpClient.post<Contacto>(this.notasURL + 'nuevoContacto', notas);
     }
-
+    
     public detail(id: number): Observable<Contacto>
     {
       return this.httpClient.get<Contacto>(this.notasURL + `detailContacto/${id}`);

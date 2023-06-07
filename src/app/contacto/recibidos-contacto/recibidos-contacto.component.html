@@ -8,15 +8,17 @@
     <thead>
       <tr>
         <th scope="col">Id</th>
-        <th scope="col">Nombre Usuario</th>
-        <th scope="col">Responer a correo</th>
+        <th scope="col">Título</th>
+        <th scope="col">Descripcion</th>
+        <th *ngIf="isAdmin" scope="col">Responer a pregunta</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let producto of notas">
-        <td>{{producto.id}}</td>
-        <td>{{producto.titulo}}</td>
-        <td><button class="btn btn-outline-primary" routerLink="/responder/{{producto.id}}"><i class=""></i>
+      <tr *ngFor="let contacto of contactos">
+        <td>{{contacto.id}}</td>
+        <td>{{contacto.titulo}}</td>
+        <td>{{contacto.descripcion}}</td>
+        <td *ngIf="isAdmin"><button class="btn btn-outline-primary" routerLink="/responder/{{contacto.id}}"><i class=""></i>
             Responder</button></td>
       </tr>
     </tbody>

@@ -1,1 +1,23 @@
-<p>responder-correo works!</p>
+<app-menu></app-menu>
+<div class="container" *ngIf="contacto" class="fade-in">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm" class="user-form">
+                <div class="form-group">
+                    <label for="titulo">titulo</label>
+                    <input type="text" class="form-control" id="titulo" name="titulo"
+                    [(ngModel)]="contacto.titulo" required>
+                </div>
+                <div class="form-group">
+                    <label for="texto">Respuesta</label>
+                    <textarea class="form-control input-textarea" placeholder="Contenido de la nota..." id="texto" name="texto" [(ngModel)]="contacto.descripcion"
+                        required></textarea>
+                </div>
+                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+                    <i class="fas fa-pencil-alt"></i> Responder</button>
+                <button class="btn btn-outline-primary btn-block" routerLink="/recibidos">
+                    <i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+            </form>
+        </div>
+    </div>
+</div>

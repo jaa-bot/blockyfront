@@ -38,6 +38,6 @@ export class DetallesContactoComponent  implements OnInit {
   }
 
   volver(): void {
-    this.router.navigate(['/recibidos']);
+    this.router.navigate(['/enviados']);
   }
 }
