@@ -1,4 +1,15 @@
-.content {
-    margin-left: 200px; /* Ancho de la barra lateral */
-    padding: 20px;
-  }
+.table {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.titulo {
+  text-align: center;
+}
+
+.container {
+  padding: 20px;
+}
+
+
+  

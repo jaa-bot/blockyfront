@@ -19,6 +19,7 @@ import { EnviadosContactoComponent } from './contacto/enviados-contacto/enviados
 import { RecibidosContactoComponent } from './contacto/recibidos-contacto/recibidos-contacto.component';
 import { ResponderCorreoComponent } from './contacto/responder-correo/responder-correo.component';
 import { DetallesContactoComponent } from './contacto/detalles-contacto/detalles-contacto.component';
+import { LogComponentComponent } from './log-component/log-component.component';
 
 
 
@@ -34,13 +35,14 @@ const routes: Routes = [
   { path: 'nuevoNotas', component: NuevaNotaComponent, canActivate: [guard], data: { expectedRol: ['admin','user'] } },
   { path: 'editar/:id', component: EditarProductoComponent, canActivate: [guard], data: { expectedRol: ['admin'] } },
   { path: 'editarPerfil/:id', component: EditarPerfilComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user'] } },
-  { path: 'perfil', component: PerfilComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user'] } },
-  { path: 'editarNotas/:id', component: EditarNotasComponent, canActivate: [guard], data: { expectedRol: ['admin','user'] } },
-  { path: 'redactar', component: RedactarContactoComponent, canActivate: [guard], data: { expectedRol: ['admin','user'] } },
+  { path: 'perfil', component: PerfilComponent, canActivate: [guard], data: { expectedRol: ['user'] } },
+  { path: 'editarNotas/:id', component: EditarNotasComponent, canActivate: [guard], data: { expectedRol: ['user'] } },
+  { path: 'redactar', component: RedactarContactoComponent, canActivate: [guard], data: { expectedRol: ['user'] } },
   { path: 'enviados', component: EnviadosContactoComponent, canActivate: [guard], data: { expectedRol: ['admin','user'] } },
   { path: 'responder/:id', component: ResponderCorreoComponent, canActivate: [guard], data: { expectedRol: ['admin','user'] } },
   { path: 'recibidos', component: RecibidosContactoComponent, canActivate: [guard], data: { expectedRol: ['admin','user'] } },
   { path: 'verCorreo/:id', component: DetallesContactoComponent, canActivate: [guard], data: { expectedRol: ['admin','user'] } },
+  { path: 'verLog', component: LogComponentComponent, canActivate: [guard], data: { expectedRol: ['admin'] } },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

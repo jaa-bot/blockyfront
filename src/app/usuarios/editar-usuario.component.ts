@@ -52,5 +52,4 @@ export class EditarProductoComponent implements OnInit {
       }
     );
   }
-
 }

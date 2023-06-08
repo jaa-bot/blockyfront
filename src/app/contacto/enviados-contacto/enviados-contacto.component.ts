@@ -41,6 +41,7 @@ export class EnviadosContactoComponent implements OnInit{
         this.contactoService.contactoPorRemitente(this.idUser).subscribe(
           data => {
             this.notas = data;
+            this.notas.reverse(); // Damos la vuelta al array
           },
           err => {
             console.log(err);

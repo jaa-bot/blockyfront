@@ -30,6 +30,7 @@ import { EnviadosContactoComponent } from './contacto/enviados-contacto/enviados
 import { RecibidosContactoComponent } from './contacto/recibidos-contacto/recibidos-contacto.component';
 import { ResponderCorreoComponent } from './contacto/responder-correo/responder-correo.component';
 import { DetallesContactoComponent } from './contacto/detalles-contacto/detalles-contacto.component';
+import { LogComponentComponent } from './log-component/log-component.component';
 
 
 
@@ -56,6 +57,7 @@ import { DetallesContactoComponent } from './contacto/detalles-contacto/detalles
     RecibidosContactoComponent,
     ResponderCorreoComponent,
     DetallesContactoComponent,
+    LogComponentComponent,
   ],
   imports: [
     BrowserModule,

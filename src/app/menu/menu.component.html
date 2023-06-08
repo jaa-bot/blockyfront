@@ -15,7 +15,10 @@
         <a class="nav-link" routerLink="/lista"><i class="far fa-list-alt"></i> Lista</a>
       </li>
       <li class="nav-item" *ngIf="isLogged && !isAdmin">
-        <a class="nav-link" routerLink="/listaNotas"><i class="far fa-list-alt"></i> Notas</a>
+        <a class="nav-link" routerLink="/listaNotas"><i class="far fa-file-alt"></i> Notas</a>
+      </li>
+      <li class="nav-item" *ngIf="isLogged && isAdmin">
+        <a class="nav-link" routerLink="/verLog"><i class="	fas fa-tasks"></i> Log</a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">

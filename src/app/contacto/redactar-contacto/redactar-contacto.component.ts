@@ -35,7 +35,7 @@ export class RedactarContactoComponent implements OnInit {
 
   onCreate(): void {
 
-    this.contacto = new Contacto(this.titulo, this.descripcion, this.idUser, 1);
+    this.contacto = new Contacto(this.titulo, this.descripcion, this.idUser, 1, false);
 
     this.contactoService.nuevo(this.contacto).subscribe(
       data => {

@@ -1,0 +1,13 @@
+.table {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .titulo {
+    text-align: center;
+  }
+  
+  .container {
+    padding: 20px; /* Agrega un espacio de relleno alrededor de la tabla */
+  }
+  

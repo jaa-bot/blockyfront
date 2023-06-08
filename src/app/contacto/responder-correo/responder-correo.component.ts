@@ -52,11 +52,11 @@ export class ResponderCorreoComponent implements OnInit {
 
   onCreate(): void {
 
-
-    this.contactoEnviar = new Contacto(this.titulo, this.descripcion, 1, this.contacto.remitente.id);
+    this.contactoEnviar = new Contacto(this.titulo, this.descripcion, 1, this.contacto.remitente.id, false);
 
     this.contactoService.nuevo(this.contactoEnviar).subscribe(
       data => {
+        this.onUpdate(data);
         this.toastr.success('Correo Enviado', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
@@ -65,6 +65,24 @@ export class ResponderCorreoComponent implements OnInit {
       err => {
         this.toastr.error(err.error.mensaje, 'Fail', {
           timeOut: 3000, positionClass: 'toast-top-center',
+        });
+        // this.router.navigate(['/']);
+      }
+    );
+  }
+
+  
+  onUpdate(data: any): void {
+    const id = this.activatedRoute.snapshot.params['id'];
+    console.log(" aqui taaaaa " + data);
+    this.contacto.responder = true;
+    this.contactoService.update(id, data).subscribe(
+      data => {
+
+      },
+      err => {
+        this.toastr.error(err.error.mensaje, 'Fail', {
+          timeOut: 3000,  positionClass: 'toast-top-center',
         });
         // this.router.navigate(['/']);
       }

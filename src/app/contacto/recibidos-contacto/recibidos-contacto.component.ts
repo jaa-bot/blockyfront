@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Contacto } from 'src/app/models/contacto';
 import { Usuario } from 'src/app/models/usuario';
@@ -26,6 +27,7 @@ export class RecibidosContactoComponent implements OnInit{
     private contactoService: ContactoService,
     private tokenService: TokenService,
     private toastr: ToastrService,
+    private activatedRoute: ActivatedRoute,
     private usuarioService: UsuarioService,
   ) {}
 
@@ -39,8 +41,6 @@ export class RecibidosContactoComponent implements OnInit{
     });
   }
 
-
-
   cargarNotas() {
     this.nombreUsuario = this.tokenService.getUserName() ?? '';
     this.usuarioService.detailName(this.nombreUsuario).subscribe(
@@ -51,6 +51,7 @@ export class RecibidosContactoComponent implements OnInit{
           data => {
             console.log(data)
             this.contactos = data;
+            this.contactos.reverse();
           },
           err => {
             console.log(err);
