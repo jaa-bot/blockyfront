@@ -39,7 +39,7 @@ export class EditarNotasComponent implements OnInit{
     const id = this.activatedRoute.snapshot.params['id'];
     this.notasService.update(id, this.notas).subscribe(
       data => {
-        this.toastr.success('Producto Actualizado', 'OK', {
+        this.toastr.success('Nota Actualizada', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
         this.router.navigate(['/listaNotas']);

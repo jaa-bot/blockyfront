@@ -41,7 +41,7 @@ export class EditarPerfilComponent implements OnInit {
     const id = this.activatedRoute.snapshot.params['id'];
     this.productoService.update(id, newUsuario).subscribe(
       data => {
-        this.toastr.success('Producto Actualizado', 'OK', {
+        this.toastr.success('Perfil Atualizado', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
         this.router.navigate(['/listaNotas']);

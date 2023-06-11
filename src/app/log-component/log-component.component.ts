@@ -46,7 +46,7 @@ export class LogComponentComponent implements OnInit {
   borrar(id: number) {
     this.usuarioService.delete(id).subscribe(
       data => {
-        this.toastr.success('Producto Eliminado', 'OK', {
+        this.toastr.success('Log borrado', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
         this.cargarProductos();

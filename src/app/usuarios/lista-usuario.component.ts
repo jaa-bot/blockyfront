@@ -45,7 +45,7 @@ export class ListaProductoComponent implements OnInit {
   borrar(id: number) {
     this.usuarioService.delete(id).subscribe(
       data => {
-        this.toastr.success('Producto Eliminado', 'OK', {
+        this.toastr.success('Usuario Actualizado', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
         this.cargarProductos();

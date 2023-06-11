@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Contacto } from 'src/app/models/contacto';
 import { Usuario } from 'src/app/models/usuario';
@@ -24,7 +24,6 @@ export class RedactarContactoComponent implements OnInit {
   constructor(private contactoService: ContactoService,
     private tokenService: TokenService,
     private toastr: ToastrService,
-    private activatedRoute: ActivatedRoute,
     private router: Router,
     private usuarioService: UsuarioService
   ) { }

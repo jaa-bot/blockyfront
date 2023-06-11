@@ -7,12 +7,12 @@
             <form (ngSubmit)="onCreate()" novalidate #f="ngForm" class="my-form">
                 <div class="form-group">
                     <label for="titulo">Título</label>
-                    <input type="text" class="form-control input-text" placeholder="Titulo del gmail..." id="titulo"
+                    <input type="text" class="form-control input-text" placeholder="Titulo de la pregunta..." id="titulo"
                         name="titulo" [(ngModel)]="titulo" required>
                 </div>
                 <div class="form-group">
                     <label for="texto">Descripcion</label>
-                    <textarea class="form-control input-textarea" placeholder="Contenido del gmail..." id="texto"
+                    <textarea class="form-control input-textarea" placeholder="Contenido de la pregunta..." id="texto"
                         name="texto" [(ngModel)]="descripcion" required></textarea>
                 </div>
                 <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">

@@ -17,7 +17,7 @@ export class EnviadosContactoComponent implements OnInit{
   nombreUsuario!: string;
   usuario!: Usuario;
   idUser!: number;
-  notas: Contacto[] = [];
+  contacto: Contacto[] = [];
 
   constructor(
     private contactoService: ContactoService,
@@ -40,8 +40,8 @@ export class EnviadosContactoComponent implements OnInit{
         this.idUser = this.usuario.id;
         this.contactoService.contactoPorRemitente(this.idUser).subscribe(
           data => {
-            this.notas = data;
-            this.notas.reverse(); // Damos la vuelta al array
+            this.contacto = data;
+            this.contacto.reverse(); // Damos la vuelta al array
           },
           err => {
             console.log(err);
