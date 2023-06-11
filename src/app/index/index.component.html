@@ -4,7 +4,7 @@
     <h2 style="margin-bottom: 40px;">Bienvenido {{nombreUsuario}}</h2>
   </div>
   <ng-template #loggedOut>
-    <h2 style="margin-bottom: 40px;"><a style="color: black;" href="registro">Pulsa aqui si quieres registrate!!</a></h2>
+    <h2 style="margin-bottom: 40px;" routerLink="registro">Pulsa aqui si quieres registarte!!</h2>
   </ng-template>
 </div>
 
@@ -28,19 +28,19 @@
         <p [@fade] *ngIf="contenidoIndex === 1" style="white-space: pre-line;">
           1. Toma de notas: Un bloc de notas te permite tomar notas de manera rápida y sencilla. Puedes escribir cualquier
           tipo de información, como ideas, recordatorios, listas, entre otros.<br><br>
-      
+
           2. Organización: Los blocs de notas suelen ofrecer funciones de organización para que puedas categorizar tus
           notas. Puedes crear carpetas, etiquetas o utilizar sistemas de clasificación para mantener tus notas ordenadas
           y fáciles de encontrar.<br><br>
-      
+
           3. Sincronización y acceso en múltiples dispositivos: La mayoría de los blocs de notas te permiten sincronizar
           tus notas en la nube, lo que te permite acceder a ellas desde cualquier dispositivo con conexión a Internet.
           Esto significa que puedes ver y editar tus notas en tu computadora, teléfono inteligente o tableta.<br><br>
-      
+
           4. Búsqueda rápida: Con la función de búsqueda integrada, puedes encontrar rápidamente notas específicas dentro
           de tu bloc de notas. Esto es especialmente útil cuando tienes una gran cantidad de notas almacenadas.
         </p>
-      
+
         <div class="image-wrapper" *ngIf="contenidoIndex === 1">
           <img src="../../assets/img/nube.jpeg" alt="Descripción de la imagen" class="custom-image">
           <img src="../../assets/img/unnamed.png" alt="Descripción de la imagen" class="custom-image">
@@ -57,20 +57,20 @@
         <div class="image-wrapper" *ngIf="contenidoIndex === 2">
           <img src="../../assets/img/ilustracion-plana-soporte-al-cliente_23-2148899114.avif" alt="Descripción de la imagen" class="custom-image">
         </div>
-        
-      
+
+
         <p [@fade] *ngIf="contenidoIndex === 3" style="white-space: pre-line;" >
           Para utilizar un blog de notas, simplemente necesitas crear una cuenta en nuestro servicio y serás registrado
           en nuestra base de datos y podrás empezar a utilizar nuestro servicio. Si no tienes cuenta aún, regístrate:
         </p>
-      
+
         <div class="button-wrapper" *ngIf="contenidoIndex === 3">
           <button class="register-button" routerLink="registro">Registrarse</button>
         </div>
-      
+
         <p [@fade]>© 2023 Blog de Notas</p>
       </div>
-      
+
       <div class="arrow right-arrow" (click)="mostrarSiguienteContenido()">
         <i class="fas fa-chevron-right"></i>
       </div>
