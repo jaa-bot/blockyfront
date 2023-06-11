@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Log } from '../models/log';
 import { LogService } from '../service/log.service';
-import { ToastrService } from 'ngx-toastr';
 import { TokenService } from '../service/token.service';
 
 @Component({
@@ -35,6 +35,7 @@ export class LogComponentComponent implements OnInit {
     this.usuarioService.lista().subscribe(
       data => {
         this.productos = data;
+        this.productos.reverse();
       },
       err => {
         console.log(err);
