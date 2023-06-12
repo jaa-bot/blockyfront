@@ -21,7 +21,7 @@
         <td><button class="btn btn-outline-primary" routerLink="/detalle/{{producto.id}}"><i class="far fa-eye"></i>
             Ver</button></td>
         <ng-container *ngIf="isAdmin && producto.nombreUsuario !== 'admin'">
-          <td><button class="btn btn-outline-warning" routerLink="/editar/{{producto.id}}"><i class="far fa-edit"></i>
+          <td><button class="btn btn-outline-warning" routerLink="/editarPerfil/{{producto.id}}"><i class="far fa-edit"></i>
               Editar</button></td>
           <td>
             <button class="btn btn-outline-danger" (click)="confirmarBorrar(producto.id)"><i class="far fa-trash-alt"></i>
